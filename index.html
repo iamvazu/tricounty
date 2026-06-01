@@ -33,6 +33,11 @@
   --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.05), 0 8px 10px -6px rgba(15, 23, 42, 0.05);
   --shadow-premium: 0 25px 50px -12px rgba(15, 23, 42, 0.04);
   --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* Additional tokens for bid submission guide */
+  --color-background-warning: #fffbeb; /* Amber 50 */
+  --font-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 /* Global Hidden class for Accessibility */
@@ -650,6 +655,159 @@
     text-align: left;
   }
 }
+
+/* Bid Submission Guide Styles */
+.step {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-background-info);
+  color: var(--color-text-info);
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.step-body {
+  flex: 1;
+}
+.step-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+}
+.step-desc {
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+.step-desc strong {
+  color: var(--color-text-primary);
+  font-weight: 500;
+}
+.deadline-card {
+  background: var(--color-background-danger);
+  border-radius: var(--border-radius-lg);
+  padding: 14px 18px;
+  margin-bottom: 1.5rem;
+}
+.deadline-card .dl-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-danger);
+  margin: 0 0 4px;
+}
+.deadline-card .dl-date {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--color-text-danger);
+  margin: 0;
+}
+.deadline-card .dl-note {
+  font-size: 12px;
+  color: var(--color-text-danger);
+  margin: 4px 0 0;
+  opacity: .8;
+}
+.label-box {
+  background: var(--color-background-secondary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 16px 20px;
+  margin: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
+.label-box .lbl {
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  display: block;
+  margin-bottom: 4px;
+}
+.addr-card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 14px 18px;
+  margin: 10px 0;
+}
+.addr-card .addr-label {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin: 0 0 4px;
+}
+.addr-card .addr-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0;
+  line-height: 1.6;
+}
+.doc-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+.doc-check i {
+  color: var(--color-text-warning);
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.doc-req {
+  color: var(--color-text-danger);
+  font-size: 11px;
+  font-weight: 500;
+  margin-left: 4px;
+}
+.warn-box {
+  background: var(--color-background-warning);
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-text-warning);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.warn-box i {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+.info-box {
+  background: var(--color-background-info);
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--color-text-info);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.info-box i {
+  vertical-align: -2px;
+  margin-right: 4px;
+}
+.section-divider {
+  border: none;
+  border-top: 0.5px solid var(--color-border-tertiary);
+  margin: 1.5rem 0;
+}
 </style>
 
 <div class="scope-wrapper">
@@ -909,5 +1067,142 @@
 </div>
 
 <div class="hours-bar"><i class="ti ti-info-circle" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"></i><strong>Addendum insight (Q14):</strong> The prior contractor's biggest failure was rushing through sites and skipping dusting. Caltrans is watching for quality this time. WEPA's bid prices $1,655/week — enough to staff 12+ hours per weekly route with no time pressure.</div>
+
+<div class="section" style="margin-top: 2.5rem;">
+  <div class="section-head">
+    <i class="ti ti-clipboard-list" aria-hidden="true" style="color:var(--color-text-info)"></i> BID SUBMISSION GUIDE (IFB 04A7525)
+  </div>
+  
+  <div class="deadline-card">
+    <div class="dl-title"><i class="ti ti-clock" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"></i>Bid submission deadline (per Addendum 1)</div>
+    <div class="dl-date">Thursday, June 4, 2026 — 2:00 PM Pacific</div>
+    <div class="dl-note">Bid opening at 2:30 PM same day via teleconference: 1-866-700-7952, passcode 7089821#</div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Assemble your bid package</div>
+      <div class="step-desc">Gather and sign all required documents. Every form must be signed by someone legally authorized to bind WEPA contractually. Each document must bear an original signature.</div>
+      
+      <div style="margin-top:10px">
+        <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px">Required at bid submission:</div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Attachment 1 — Bid Proposal (ADM-1412)</strong> — fill in all 8 unit prices, select benefits Option 2<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Bid/Bidder Certification Sheet (DOT ADM-1416)</strong> — signed by Francisco Rivera<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Bidder Declaration (GSPD-05-105)</strong> — list your DVBE sub/supplier here<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>DVBE Declarations (STD 843)</strong> — completed and signed by your DVBE partner<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Quotes from DVBE subcontractor/supplier</strong> — on their letterhead with: type of service/goods, estimated hours or quantity, hourly rate or unit price, total quote amount<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>California Civil Rights Laws Certification (DOT ADM-0076)</strong> — signed<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Darfur Contracting Act Certification (DOT ADM-0077)</strong> — if no overseas operations, select Option 1<span class="doc-req">Required</span></span></div>
+        <div class="doc-check"><i class="ti ti-square" aria-hidden="true"></i><span><strong>Valid DIR registration number</strong> — janitorial services registration with Labor Commissioner<span class="doc-req">Required</span></span></div>
+      </div>
+      
+      <div class="warn-box"><i class="ti ti-alert-triangle" aria-hidden="true"></i>Missing any of these = bid rejected as non-responsive. Do not submit the checklist page itself, the Proposed Form of Agreement, brochures, or any extra documents.</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Label your mailing package exactly like this</div>
+      <div class="step-desc">Packages not clearly labeled may be rejected, including overnight mail and hand-delivered packages.</div>
+      
+      <div class="label-box">
+        <span class="lbl">Your outer envelope/package must show:</span>
+        WEPA Commercial Cleaning<br>
+        2244 Main Street Suite 3<br>
+        Chula Vista, CA 91911<br><br>
+        Agreement No. 04A7525<br>
+        Bid Due Date: June 4, 2026<br>
+        Bid Due Time: 2:00 p.m.<br>
+        Bid Opening Date: June 4, 2026<br>
+        Bid Opening: 2:30 p.m.<br><br>
+        <strong>BID SUBMITTAL DO NOT OPEN</strong>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">Mail or hand-deliver to this address</div>
+      
+      <div class="addr-card">
+        <div class="addr-label">Deliver to:</div>
+        <div class="addr-text">
+          Attention: Tiaja Watson<br>
+          California Department of Transportation (Caltrans)<br>
+          Division of Procurement and Contracts<br>
+          ATTN: Bid Unit<br>
+          1727 30th Street, 4th Floor, MS 65<br>
+          Sacramento, CA 95816-7006
+        </div>
+      </div>
+      
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px">
+        <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px">
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px"><i class="ti ti-truck-delivery" aria-hidden="true" style="margin-right:4px"></i>If mailing (FedEx, UPS, USPS)</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.5">Ship early enough to arrive before June 4, 2:00 PM. Late bids are not considered under any circumstances. Recommend shipping by June 1-2 with tracking.</div>
+        </div>
+        <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px">
+          <div style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px"><i class="ti ti-walk" aria-hidden="true" style="margin-right:4px"></i>If hand-delivering</div>
+          <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.5">Date/time stamp the sealed envelope immediately upon arrival. The machine is in the lobby on the 1st floor, right of the security guard. After stamping, place in the locked bid cabinet below the time stamp.</div>
+        </div>
+      </div>
+      
+      <div class="warn-box"><i class="ti ti-alert-triangle" aria-hidden="true"></i>WEPA is based in Chula Vista (San Diego). Sacramento is a 6-hour drive or overnight FedEx. Ship by Tuesday June 2 at the latest. Do not rely on 1-day shipping for a deadline this important.</div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="step">
+    <div class="step-num">4</div>
+    <div class="step-body">
+      <div class="step-title">Attend the bid opening (optional but recommended)</div>
+      <div class="step-desc">Call in to hear all bids read aloud — this tells you what your competitors bid.</div>
+      
+      <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:12px 14px;margin-top:8px">
+        <div style="font-size:13px;color:var(--color-text-primary)"><strong>June 4, 2026 at 2:30 PM Pacific</strong></div>
+        <div style="font-size:13px;color:var(--color-text-secondary);margin-top:4px">Call: <strong>1-866-700-7952</strong></div>
+        <div style="font-size:13px;color:var(--color-text-secondary)">Passcode: <strong>7089821#</strong></div>
+        <div style="font-size:12px;color:var(--color-text-tertiary);margin-top:4px">Lines open at 2:20 PM. Bids read in agreement numeric order. No questions allowed.</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="step">
+    <div class="step-num">5</div>
+    <div class="step-body">
+      <div class="step-title">After award (if WEPA wins)</div>
+      <div class="step-desc">These documents are requested only from the winning bidder — do not submit with your bid:</div>
+      <div style="margin-top:8px">
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Contractor Certification Clauses (CCC 04/2017) — sign all pages</div>
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Postconsumer Content Certification (CalRecycle 74)</div>
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Certificate of Insurance — GL $1M/$2M, Auto $1M, Workers Comp $1M (within 10 days of award notice)</div>
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Additional insured endorsement naming Caltrans</div>
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Payee Data Record (STD 204)</div>
+        <div class="doc-check"><i class="ti ti-circle-check" aria-hidden="true" style="color:var(--color-text-success)"></i>Evidence of employee benefits coverage (if choosing actual benefits instead of cash-in-lieu)</div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="section-divider">
+
+  <div class="info-box"><i class="ti ti-calendar" aria-hidden="true"></i><strong>Key dates:</strong> Preliminary bid results posted online by 3:00 PM on June 5 at dot.ca.gov/programs/procurement-and-contracts/bid-results. Proposed award date is June 18, 2026 (estimate). Contract starts July 15, 2026 or upon DGS approval.</div>
+
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:14px 18px;margin-top:1rem">
+    <div style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">Where to download the blank forms</div>
+    <div style="font-size:12px;color:var(--color-text-secondary);line-height:1.8">
+      All forms are either attached to the IFB package or linked in Attachment 2. The Bid/Bidder Certification Sheet (ADM-1416), Bidder Declaration (GSPD-05-105), STD 843, ADM-0076, and ADM-0077 links are on the Attachment 2 checklist page. Also check Cal eProcure for any additional addenda before submitting: <strong>caleprocure.com</strong>
+    </div>
+  </div>
+</div>
 
 </div>
