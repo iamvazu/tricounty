@@ -463,6 +463,165 @@
   flex-shrink: 0;
 }
 
+/* Critical Alert Block */
+.critical-box {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-left: 5px solid #dc2626;
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.05);
+  animation: border-pulse 2s infinite alternate;
+}
+
+@keyframes border-pulse {
+  0% { border-color: #fee2e2; }
+  100% { border-color: #fca5a5; }
+}
+
+.critical-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #991b1b;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 1rem;
+}
+
+.critical-title i {
+  font-size: 1.35rem;
+  color: #dc2626;
+}
+
+.critical-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.critical-item {
+  font-size: 0.875rem;
+  color: #7f1d1d;
+  line-height: 1.5;
+}
+
+.critical-item.action {
+  background: #fee2e2;
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+  color: #991b1b;
+  border: 0.5px solid #fca5a5;
+  font-weight: 500;
+}
+
+.critical-item.note {
+  color: #166534;
+  background: #f0fdf4;
+  padding: 8px 12px;
+  border-radius: var(--border-radius-sm);
+  border: 0.5px solid #bbf7d0;
+  font-weight: 500;
+}
+
+.critical-item .label {
+  font-weight: 700;
+}
+
+/* Key Intelligence Table */
+.table-container {
+  overflow-x: auto;
+  border-radius: var(--border-radius-md);
+  border: 1px solid var(--color-border-secondary);
+  margin-bottom: 2.5rem;
+}
+
+.intel-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+.intel-table th {
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 1.5px solid var(--color-border-primary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.intel-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--color-border-tertiary);
+  color: var(--color-text-secondary);
+  line-height: 1.45;
+}
+
+.intel-table tr:last-child td {
+  border-bottom: none;
+}
+
+.intel-table tr:hover {
+  background: var(--color-background-secondary);
+}
+
+.cell-metric {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.cell-val {
+  font-weight: 500;
+  color: #1e293b;
+}
+
+.cell-val.highlighted {
+  color: #0369a1;
+  font-weight: 600;
+}
+
+.cell-val.danger {
+  color: #b91c1c;
+  background: #fef2f2;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.cell-val.warning {
+  color: #b45309;
+  background: #fffbeb;
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  font-weight: 600;
+}
+
+.cell-val.deadline {
+  color: #1d4ed8;
+  background: #eff6ff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.cell-insight {
+  font-style: italic;
+  color: #64748b;
+}
+
+.danger-text {
+  color: #b91c1c;
+  font-weight: 500;
+}
+
 /* Media Queries for full responsiveness */
 @media (max-width: 768px) {
   .scope-wrapper {
@@ -494,6 +653,113 @@
 </style>
 
 <div class="scope-wrapper">
+
+<!-- Critical Alert Block -->
+<div class="critical-box">
+  <div class="critical-title">
+    <i class="ti ti-alert-triangle" aria-hidden="true"></i> CRITICAL: DVBE 3% IS MANDATORY — BID WILL BE REJECTED WITHOUT IT
+  </div>
+  <div class="critical-body">
+    <div class="critical-item"><span class="label">Addendum 1, Q16-Q17:</span> DVBE 3% is mandatory. No waiver. No exemption. No post-award cure.</div>
+    <div class="critical-item action"><span class="label">ACTION:</span> WEPA must secure a DGS-certified DVBE subcontractor BEFORE June 4, 2026 or the bid is dead on arrival.</div>
+    <div class="critical-item note"><span class="label">NOTE:</span> DVBE-certified SUPPLIERS also count (Addendum Q18). A DVBE cleaning supply vendor satisfies the requirement.</div>
+  </div>
+</div>
+
+<!-- Key Intelligence Section -->
+<div class="section">
+  <div class="section-head">
+    <i class="ti ti-brain" aria-hidden="true" style="color:var(--color-text-info)"></i> KEY INTELLIGENCE FROM ADDENDUM 1
+  </div>
+  <div class="table-container">
+    <table class="intel-table">
+      <thead>
+        <tr>
+          <th>Metric / Parameter</th>
+          <th>Value</th>
+          <th>Insight & Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cell-metric">State Budget for this Contract</td>
+          <td class="cell-val highlighted">$316,800.00</td>
+          <td class="cell-insight">This is the NTE ceiling, not a target</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Previous Contract Value (04A6510)</td>
+          <td class="cell-val highlighted">$316,800.00</td>
+          <td class="cell-insight">Same amount — budget copied from prior NTE</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Previous Incumbent</td>
+          <td class="cell-val">GSGC, Inc. dba Gold State Green Clean</td>
+          <td class="cell-insight">Agreement 04A6510, Nov 2022 - Nov 2025</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Last Monthly Invoice</td>
+          <td class="cell-val highlighted">$3,375.00</td>
+          <td class="cell-insight">For ~7,000 sqft old scope; new scope is ~18,300 sqft</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">NEW Total Serviceable Sqft</td>
+          <td class="cell-val highlighted">~18,327 sqft</td>
+          <td class="cell-insight">Per new IFB Exhibit A — 2.6× larger than old contract</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">OLD Total Serviceable Sqft</td>
+          <td class="cell-val">~6,962 sqft</td>
+          <td class="cell-insight">Per addendum attachment (previous Exhibit A)</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Scope Increase</td>
+          <td class="cell-val highlighted danger">2.63× larger</td>
+          <td class="cell-insight">Budget scaled from old spend × area ratio</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Implied Monthly Budget</td>
+          <td class="cell-val highlighted">$8,800/month</td>
+          <td class="cell-insight">$316,800 ÷ 36 months</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Bid Deadline (EXTENDED)</td>
+          <td class="cell-val deadline">June 4, 2026, 14:00</td>
+          <td class="cell-insight">Changed from May 21 per Addendum 1</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">DVBE Requirement</td>
+          <td class="cell-val highlighted warning">3% MANDATORY, NO WAIVER</td>
+          <td class="cell-insight">Q16-Q17 confirmed; DVBE suppliers also count per Q18</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Dispensers</td>
+          <td class="cell-val">Universal (mostly)</td>
+          <td class="cell-insight">Q23: minor variations but similar products</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Equipment Storage</td>
+          <td class="cell-val">Too small for buffers/extractors</td>
+          <td class="cell-insight">Q22: Must haul heavy equipment between sites</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Route Flexibility</td>
+          <td class="cell-val">Contractor can propose optimized route</td>
+          <td class="cell-insight">Q27: Caltrans is flexible on scheduling</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Access</td>
+          <td class="cell-val">During business hours 6:30am-3:00pm</td>
+          <td class="cell-insight">Q20-21: Report to front office for closet access</td>
+        </tr>
+        <tr>
+          <td class="cell-metric">Performance Issues (Prior)</td>
+          <td class="cell-val danger-text">Poor cleaning, rarely dusted, time constraint</td>
+          <td class="cell-insight">Q14: biggest issue was rushing through multiple offices</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <div class="region">
 <div class="region-title"><i class="ti ti-building" aria-hidden="true" style="color:var(--color-text-info)"></i> South Bay region <span class="region-badge badge-sc">Santa Clara County</span></div>
