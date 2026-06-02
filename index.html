@@ -808,6 +808,256 @@
   border-top: 0.5px solid var(--color-border-tertiary);
   margin: 1.5rem 0;
 }
+
+/* Premium Tabs Styling */
+.tabs-nav {
+  display: flex;
+  gap: 8px;
+  background: var(--color-background-secondary);
+  border: 1px solid var(--color-border-secondary);
+  padding: 6px;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  transition: var(--transition-smooth);
+}
+
+.tab-btn i {
+  font-size: 1.1rem;
+}
+
+.tab-btn:hover {
+  color: var(--color-text-primary);
+  background: rgba(15, 23, 42, 0.03);
+}
+
+.tab-btn.active {
+  background: #ffffff;
+  color: var(--color-text-info);
+  box-shadow: var(--shadow-sm);
+  font-weight: 600;
+}
+
+/* Tab Content Visibility */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs-nav {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
+
+/* Action Plan Styles */
+.status-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.status {
+  padding: 6px 14px;
+  border-radius: var(--border-radius-md);
+  font-size: 12px;
+  font-weight: 500;
+}
+.status.done {
+  background: #E2EFDA;
+  color: #1A7A3A;
+}
+.status.wait {
+  background: #FFF2CC;
+  color: #633806;
+}
+.status.todo {
+  background: #E6F1FB;
+  color: #0C447C;
+}
+.status.crit {
+  background: #FFC7CE;
+  color: #9C0006;
+}
+.phase {
+  margin-bottom: 2rem;
+}
+.phase-head {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.phase-date {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 10px;
+  border-radius: var(--border-radius-md);
+  background: var(--color-background-info);
+  color: var(--color-text-info);
+}
+.task-card {
+  background: var(--color-background-primary);
+  border: 0.5px solid var(--color-border-tertiary);
+  border-radius: var(--border-radius-lg);
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  transition: var(--transition-smooth);
+}
+.task-card:hover {
+  border-color: var(--color-border-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+.task-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  margin: 0 0 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.task-detail {
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+.task-detail strong {
+  color: var(--color-text-primary);
+}
+.tag {
+  font-size: 10px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: var(--border-radius-sm);
+}
+.tag-paris {
+  background: #EEEDFE;
+  color: #3C3489;
+}
+.tag-you {
+  background: #E6F1FB;
+  color: #0C447C;
+}
+.tag-desiree {
+  background: #FFF2CC;
+  color: #633806;
+}
+.form-box {
+  background: var(--color-background-secondary);
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  margin: 8px 0;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+.form-box strong {
+  color: var(--color-text-primary);
+}
+.warn {
+  background: var(--color-background-danger);
+  border-radius: var(--border-radius-md);
+  padding: 10px 14px;
+  font-size: 12px;
+  color: var(--color-text-danger);
+  margin: 8px 0;
+  line-height: 1.5;
+}
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  font-size: 13px;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+}
+.price-row:last-child {
+  border: none;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+.assembly {
+  counter-reset: asm;
+}
+.asm-item {
+  counter-increment: asm;
+  padding: 8px 0 8px 28px;
+  position: relative;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  border-bottom: 0.5px solid var(--color-border-tertiary);
+  line-height: 1.5;
+}
+.asm-item::before {
+  content: counter(asm);
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--color-background-info);
+  color: var(--color-text-info);
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.asm-item strong {
+  color: var(--color-text-primary);
+}
+.label-mock {
+  background: var(--color-background-secondary);
+  border: 0.5px dashed var(--color-border-secondary);
+  border-radius: var(--border-radius-lg);
+  padding: 14px 20px;
+  margin: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
 </style>
 
 <div class="scope-wrapper">
@@ -823,6 +1073,22 @@
     <div class="critical-item note"><span class="label">NOTE:</span> DVBE-certified SUPPLIERS also count (Addendum Q18). A DVBE cleaning supply vendor satisfies the requirement.</div>
   </div>
 </div>
+
+<!-- Premium Tabs Navigation -->
+<div class="tabs-nav">
+  <button class="tab-btn active" onclick="switchTab(event, 'tab-sow')">
+    <i class="ti ti-file-text"></i> Scope of Work
+  </button>
+  <button class="tab-btn" onclick="switchTab(event, 'tab-guide')">
+    <i class="ti ti-clipboard-list"></i> Submission Guide
+  </button>
+  <button class="tab-btn" onclick="switchTab(event, 'tab-pariclin')">
+    <i class="ti ti-calendar-event"></i> Pariclin Janitorial
+  </button>
+</div>
+
+<!-- Tab 1: Scope of Work -->
+<div id="tab-sow" class="tab-content active">
 
 <!-- Key Intelligence Section -->
 <div class="section">
@@ -1068,6 +1334,11 @@
 
 <div class="hours-bar"><i class="ti ti-info-circle" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"></i><strong>Addendum insight (Q14):</strong> The prior contractor's biggest failure was rushing through sites and skipping dusting. Caltrans is watching for quality this time. Pariclin Janitorial Services' bid prices $1,655/week — enough to staff 12+ hours per weekly route with no time pressure.</div>
 
+</div> <!-- End of tab-sow -->
+
+<!-- Tab 2: Submission Guide -->
+<div id="tab-guide" class="tab-content">
+
 <div class="section" style="margin-top: 2.5rem;">
   <div class="section-head">
     <i class="ti ti-clipboard-list" aria-hidden="true" style="color:var(--color-text-info)"></i> BID SUBMISSION GUIDE (IFB 04A7525)
@@ -1205,4 +1476,240 @@
   </div>
 </div>
 
+</div> <!-- End of tab-guide -->
+
+<!-- Tab 3: Pariclin Janitorial -->
+<div id="tab-pariclin" class="tab-content">
+  <div class="section" style="margin-top: 2.5rem;">
+    <div class="section-head">
+      <i class="ti ti-clipboard-list" aria-hidden="true" style="color:var(--color-text-info)"></i> PARICLIN JANITORIAL ACTION PLAN
+    </div>
+    
+    <div style="padding:0.5rem 0">
+      <div style="font-size:16px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px">Pariclin Janitorial Services — Bid Package Action Plan</div>
+      <div style="font-size:13px;color:var(--color-text-secondary);margin-bottom:1rem">CalTrans IFB #04A7525 | Bid Due: June 4, 2026, 2:00 PM</div>
+
+      <div class="status-bar">
+        <span class="status done">✓ Contract signed</span>
+        <span class="status done">✓ $450 collected</span>
+        <span class="status done">✓ DVBE email sent</span>
+        <span class="status wait">⏳ Waiting on Desiree</span>
+        <span class="status todo">◻ Forms to complete</span>
+        <span class="status crit">⚡ Ship by June 2</span>
+      </div>
+
+      <!-- PHASE 1 -->
+      <div class="phase">
+        <div class="phase-head"><span class="phase-date">Now → June 1</span> Prepare all forms for Paris to sign</div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You prepare</span> <span class="tag tag-paris">Paris signs</span> ADM-1412 Bid Proposal</div>
+          <div class="task-detail">This is the pricing sheet. Fill in these exact unit prices — Paris signs at the bottom.
+            <div style="margin-top:8px">
+              <div class="price-row"><span>Item 1 — 25 weeks, 2026</span><span><strong>$1,655.00</strong></span></div>
+              <div class="price-row"><span>Item 2 — 6 months, 2026</span><span><strong>$1,258.00</strong></span></div>
+              <div class="price-row"><span>Item 3 — 52 weeks, 2027</span><span><strong>$1,705.00</strong></span></div>
+              <div class="price-row"><span>Item 4 — 12 months, 2027</span><span><strong>$1,296.00</strong></span></div>
+              <div class="price-row"><span>Item 5 — 52 weeks, 2028</span><span><strong>$1,764.00</strong></span></div>
+              <div class="price-row"><span>Item 6 — 12 months, 2028</span><span><strong>$1,341.00</strong></span></div>
+              <div class="price-row"><span>Item 7 — 25 weeks, 2029</span><span><strong>$1,826.00</strong></span></div>
+              <div class="price-row"><span>Item 8 — 6 months, 2029</span><span><strong>$1,388.00</strong></span></div>
+              <div class="price-row"><span>TOTAL BID</span><span><strong>$314,933.00</strong></span></div>
+            </div>
+          </div>
+          <div class="form-box"><strong>Benefits:</strong> Check ☒ Option 2 — Cash equal to CalHR blended benefits rate ($15.51/hr). This is the simplest compliance path.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You prepare</span> <span class="tag tag-paris">Paris signs</span> Bid/Bidder Certification Sheet (DOT ADM-1416)</div>
+          <div class="task-detail">
+            <strong>Key sections Paris must complete:</strong>
+            <div class="form-box">
+              • <strong>Section 16 (SB Preference):</strong> Check YES — Pariclin is a certified Small Business. Enter DGS certification number.<br>
+              • <strong>Company info:</strong> Pariclin Janitorial Services, Inc., 1631 Rogers Ave., San Jose, CA 95112<br>
+              • <strong>Signature:</strong> Paris Millan must sign as the person authorized to bind the company<br>
+              • <strong>Title:</strong> Owner / President
+            </div>
+          </div>
+          <div class="warn">An UNSIGNED certification sheet = automatic bid rejection. Make sure Paris signs with their title.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You prepare</span> <span class="tag tag-paris">Paris signs</span> Bidder Declaration (GSPD-05-105)</div>
+          <div class="task-detail">
+            This is where you list Desiree's DVBE company. Fill in:
+            <div class="form-box">
+              • <strong>Prime contractor:</strong> Pariclin Janitorial Services, Inc.<br>
+              • <strong>DVBE subcontractor/supplier:</strong> [Desiree's company name from DVBEsales.com]<br>
+              • <strong>DGS certification #:</strong> [From Desiree]<br>
+              • <strong>Work/goods description:</strong> Janitorial cleaning supplies<br>
+              • <strong>Dollar amount:</strong> $15,746.65 (5.0% of $314,933.00)<br>
+              • <strong>Signed by:</strong> Paris Millan
+            </div>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You prepare</span> <span class="tag tag-paris">Paris signs</span> California Civil Rights Laws Certification (DOT ADM-0076)</div>
+          <div class="task-detail">Download from the link in Attachment 2. Straightforward certification — Paris reads, signs, and dates. Required because the contract exceeds $100,000.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You prepare</span> <span class="tag tag-paris">Paris signs</span> Darfur Contracting Act Certification (DOT ADM-0077)</div>
+          <div class="task-detail">
+            <div class="form-box">If Pariclin has <strong>not</strong> had business activities outside the United States in the past 3 years → select <strong>Option 1</strong> and sign. That's it.</div>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-paris">Paris provides</span> DIR Janitorial Registration Number</div>
+          <div class="task-detail">Pariclin must have a valid and current registration with the Department of Industrial Relations (DIR) Labor Commissioner's Office for janitorial services. <strong>CalTrans will verify this before award.</strong>
+            <div class="form-box"><strong>Check registration at:</strong> dir.ca.gov/dlse/Janitorial_Providers_Contractors.html<br>
+              If not registered, Paris must register IMMEDIATELY — this is a minimum qualification. Without it, the bid is rejected as non-responsive.</div>
+          </div>
+          <div class="warn">This is a pass/fail requirement. No valid DIR registration = bid is dead. Verify TODAY.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-paris">Paris confirms</span> DGS Small Business Certification</div>
+          <div class="task-detail">Confirm Pariclin's SB certification is current and active with the Department of General Services (DGS), Office of Small Business and DVBE Services (OSDS). The certification number goes on the Bid/Bidder Certification Sheet (Section 16).
+            <div class="form-box"><strong>Note:</strong> SB-PW (Public Works) certification does NOT count for this contract — it must be standard SB or Micro Business certification.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="phase">
+        <div class="phase-head"><span class="phase-date">By June 2</span> Receive documents from Desiree and assemble</div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-desiree">From Desiree</span> Signed STD 843</div>
+          <div class="task-detail">The DVBE Declaration form, completed and signed, referencing Pariclin as prime contractor and Agreement #04A7525. Goes into the bid package.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-desiree">From Desiree</span> Quote on company letterhead</div>
+          <div class="task-detail">Addressed to Pariclin Janitorial Services, Inc. Must include: type of goods, estimated quantities, unit prices, and total amount ($15,746.65). Goes into the bid package.</div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You assemble</span> Final bid package — stack in this order</div>
+          <div class="task-detail">
+            <div class="assembly">
+              <div class="asm-item"><strong>Attachment 1 — Bid Proposal (ADM-1412)</strong> — the pricing sheet with all 8 unit prices filled in and signed</div>
+              <div class="asm-item"><strong>Bid/Bidder Certification Sheet (DOT ADM-1416)</strong> — signed by Paris Millan</div>
+              <div class="asm-item"><strong>Bidder Declaration (GSPD-05-105)</strong> — listing Desiree's DVBE company, signed by Paris</div>
+              <div class="asm-item"><strong>DVBE Declaration (STD 843)</strong> — signed by Desiree</div>
+              <div class="asm-item"><strong>DVBE Quote</strong> — on Desiree's company letterhead</div>
+              <div class="asm-item"><strong>California Civil Rights Laws Certification (DOT ADM-0076)</strong> — signed by Paris</div>
+              <div class="asm-item"><strong>Darfur Contracting Act Certification (DOT ADM-0077)</strong> — signed by Paris</div>
+              <div class="asm-item"><strong>DIR Registration Number</strong> — written on the Bid/Bidder Certification Sheet or included as a printout</div>
+            </div>
+          </div>
+          <div class="warn"><strong>Do NOT include:</strong> the Attachment 2 checklist page itself, the Proposed Form of Agreement (Attachment 3), company brochures, advertisements, or any extra documents. Only what's listed above.</div>
+        </div>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="phase">
+        <div class="phase-head"><span class="phase-date">June 2</span> Package, label, and ship</div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You coordinate</span> Seal and label the envelope</div>
+          <div class="task-detail">
+            <div class="label-mock">
+              Pariclin Janitorial Services, Inc.<br>
+              1631 Rogers Ave.<br>
+              San Jose, CA 95112<br><br>
+              Agreement No. 04A7525<br>
+              Bid Due Date: June 4, 2026<br>
+              Bid Due Time: 2:00 p.m.<br>
+              Bid Opening Date: June 4, 2026<br>
+              Bid Opening: 2:30 p.m.<br><br>
+              <strong>BID SUBMITTAL DO NOT OPEN</strong>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You or Paris</span> Ship to Sacramento</div>
+          <div class="task-detail">
+            <div class="form-box">
+              <strong>Deliver to:</strong><br>
+              Attention: Tiaja Watson<br>
+              California Department of Transportation (Caltrans)<br>
+              Division of Procurement and Contracts<br>
+              ATTN: Bid Unit<br>
+              1727 30th Street, 4th Floor, MS 65<br>
+              Sacramento, CA 95816-7006
+            </div>
+            <strong>From San Jose:</strong> Sacramento is ~2 hours by car or overnight FedEx/UPS. Ship June 2 with next-day delivery and tracking + signature confirmation. Or Paris can hand-deliver on June 4 before 2:00 PM (stamp in lobby, drop in locked bid cabinet).
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="phase">
+        <div class="phase-head"><span class="phase-date">June 4, 2:30 PM</span> Bid opening — call in and listen</div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You + Paris</span> Listen to bid opening via teleconference</div>
+          <div class="task-detail">
+            <div class="form-box">
+              <strong>Call:</strong> 1-866-700-7952<br>
+              <strong>Passcode:</strong> 7089821#<br>
+              <strong>Lines open:</strong> 2:20 PM Pacific<br>
+              <strong>Format:</strong> Bids read aloud in agreement numeric order. No questions allowed. No info repeated.
+            </div>
+            You'll hear every competitor's total bid. This tells you immediately where Pariclin stands. Preliminary results also posted online by 3:00 PM the next day at dot.ca.gov/programs/procurement-and-contracts/bid-results.
+          </div>
+        </div>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="phase">
+        <div class="phase-head"><span class="phase-date">After award</span> If Pariclin wins — post-award documents</div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-paris">Paris handles</span> Post-award documents (within 10 days of notification)</div>
+          <div class="task-detail">
+            <div class="assembly">
+              <div class="asm-item"><strong>Certificate of Insurance</strong> — GL $1M/$2M, Auto $1M, Workers Comp $1M with additional insured endorsement naming Caltrans</div>
+              <div class="asm-item"><strong>Contractor Certification Clauses (CCC 04/2017)</strong> — sign all pages</div>
+              <div class="asm-item"><strong>Postconsumer Content Certification (CalRecycle 74)</strong></div>
+              <div class="asm-item"><strong>Payee Data Record (STD 204)</strong></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="task-card">
+          <div class="task-title"><span class="tag tag-you">You collect</span> Success fee from Pariclin</div>
+          <div class="task-detail">
+            <div class="form-box">
+              <strong>1% of awarded contract value</strong><br>
+              If awarded at $314,933.00 → Success fee = <strong>$3,149.33</strong><br>
+              Due within 30 days of CalTrans contract execution, via Zelle to (408) 657-6116<br>
+              Per your signed Bid Management Services Agreement, Section 2.2
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+</div> <!-- End of scope-wrapper -->
+
+<script>
+function switchTab(event, tabId) {
+  // Hide all tab contents
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  // Deactivate all tab buttons
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  
+  // Show target tab content
+  document.getElementById(tabId).classList.add('active');
+  // Activate target tab button
+  event.currentTarget.classList.add('active');
+}
+</script>
